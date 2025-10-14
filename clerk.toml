@@ -7,5 +7,5 @@ target_dir   = "_target"
 name     = "income_tax"
 modules  = [ "Income_tax" ]  # Modules components
 tests    = [ ]  # Related test(s)
-backends = [ "c", "java" ]                        # Output language backends
+backends = [ "java" ]                        # Output language backends
 
