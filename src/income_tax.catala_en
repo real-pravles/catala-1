@@ -1,4 +1,6 @@
-```catala
+> Module Income_tax
+
+```catala-metadata-metadata
 declaration scope IncomeTax:
-  definition tax_rate 10%
+  output tax_rate content decimal
 ```
