@@ -1,6 +1,6 @@
 > Module Income_tax
 
 ```catala-metadata-metadata
-declaration scope IncomeTax:
-  output tax_rate content decimal
+declaration scope Налог:
+  output ставка content decimal
 ```
