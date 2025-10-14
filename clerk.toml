@@ -1,0 +1,11 @@
+[project]
+include_dirs = [ "src" ]
+build_dir    = "_build"
+target_dir   = "_target"
+
+[[target]]
+name     = "income_tax"
+modules  = [ "income_tax/main" ]  # Modules components
+tests    = [ ]  # Related test(s)
+backends = [ "c", "java" ]                        # Output language backends
+

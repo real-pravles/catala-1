@@ -1,0 +1,4 @@
+```catala
+declaration scope IncomeTax:
+  definition tax_rate 10%
+```
