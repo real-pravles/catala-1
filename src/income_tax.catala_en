@@ -1,6 +1,6 @@
 > Module Income_tax
 
-```catala-metadata-metadata
+```catala-metadata
 declaration scope IncomeTax:
   input sumOfTaxBases content money
   output taxRateAmount content money
