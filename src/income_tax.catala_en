@@ -1,6 +1,25 @@
 > Module Income_tax
 
 ```catala-metadata-metadata
-declaration scope Налог:
-  output ставка content decimal
+declaration scope IncomeTax:
+  input sumOfTaxBases content money
+  output taxRateAmount content money
+  output taxRatePercent content decimal
+```
+
+Section 224.1.
+
+```catala
+scope IncomeTax:
+  definition taxRatePercent under condition
+    sumOfTaxBases <= $2400000
+  consequence equals 0.13
+  
+  definition taxRatePercent under condition
+    sumOfTaxBases > $2400000 and sumOfTaxBases <= $5000000
+  consequence equals 0.15
+  
+  definition taxRateAmount under condition
+    sumOfTaxBases > $2400000 and sumOfTaxBases <= $5000000
+  consequence equals $312000
 ```
