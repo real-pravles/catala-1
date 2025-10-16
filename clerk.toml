@@ -5,7 +5,7 @@ target_dir   = "_target"
 
 [[target]]
 name     = "income_tax"
-modules  = [ "Income_tax" ]  # Modules components
+modules  = [ "Income_tax", "Income_tax_ru" ]
 tests    = [ ]  # Related test(s)
 backends = [ "java" ]                        # Output language backends
 

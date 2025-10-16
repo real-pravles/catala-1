@@ -1,0 +1,27 @@
+> Module Income_tax_ru
+
+```catala-metadata
+declaration scope IncomeTaxRu:
+  input суммаНалоговыхБаз content money
+  output taxRateAmount content money
+  output taxRatePercent content decimal
+
+```
+
+```catala
+scope IncomeTaxRu:
+  definition taxRatePercent under condition
+    суммаНалоговыхБаз <= $2400000
+  consequence equals 0.13
+```
+
+```catala
+scope IncomeTaxRu:
+  definition taxRatePercent under condition
+    суммаНалоговыхБаз > $2400000 and суммаНалоговыхБаз <= $5000000
+  consequence equals 0.15
+  
+  definition taxRateAmount under condition
+     суммаНалоговыхБаз > $2400000 and суммаНалоговыхБаз <= $5000000
+  consequence equals $312000
+```
