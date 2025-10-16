@@ -1,20 +1,34 @@
 > Module Income_tax
 
+НК РФ Статья 224. Налоговые ставки
+
+ * `sumOfTaxBases` -- сумма налоговых баз, указанных в пункте 2.1 статьи 210 настоящего Кодекса, за налоговый период.
+ * `taxRateAmount` -- налоговая ставка в рублях.
+ * `taxRatePercent` -- налоговая ставка в процентах.
+
 ```catala-metadata
 declaration scope IncomeTax:
   input sumOfTaxBases content money
   output taxRateAmount content money
   output taxRatePercent content decimal
+
 ```
 
-Section 224.1.
+1. Налоговая ставка устанавливается в следующих размерах:
+
+13 процентов - если сумма налоговых баз, указанных в пункте 2.1 статьи 210 настоящего Кодекса, за налоговый период равна 2,4 миллиона рублей или менее 2,4 миллиона рублей;
 
 ```catala
 scope IncomeTax:
   definition taxRatePercent under condition
     sumOfTaxBases <= $2400000
   consequence equals 0.13
-  
+```
+
+312 тысяч рублей и 15 процентов суммы налоговых баз, указанных в пункте 2.1 статьи 210 настоящего Кодекса, превышающей 2,4 миллиона рублей, - если сумма налоговых баз, указанных в пункте 2.1 статьи 210 настоящего Кодекса, за налоговый период превышает 2,4 миллиона рублей и составляет не более 5 миллионов рублей;
+
+```catala
+scope IncomeTax:
   definition taxRatePercent under condition
     sumOfTaxBases > $2400000 and sumOfTaxBases <= $5000000
   consequence equals 0.15
