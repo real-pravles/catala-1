@@ -1,7 +1,7 @@
-> Module Income_tax_ru
+> Module Income_tax2
 
 ```catala-metadata
-declaration scope IncomeTaxRu:
+declaration scope IncomeTax2:
   input суммаНалоговыхБаз content money
   output taxRateAmount content money
   output taxRatePercent content decimal
@@ -9,14 +9,14 @@ declaration scope IncomeTaxRu:
 ```
 
 ```catala
-scope IncomeTaxRu:
+scope IncomeTax2:
   definition taxRatePercent under condition
     суммаНалоговыхБаз <= $2400000
   consequence equals 0.13
 ```
 
 ```catala
-scope IncomeTaxRu:
+scope IncomeTax2:
   definition taxRatePercent under condition
     суммаНалоговыхБаз > $2400000 and суммаНалоговыхБаз <= $5000000
   consequence equals 0.15
